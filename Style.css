@@ -1,0 +1,181 @@
+/* Import Google Fonts (Kanit & Mitr) */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Mitr:wght@400;500;600&display=swap');
+
+/* ==========================================
+   1. Box Model & Global Reset (20%)
+   ========================================== */
+* {
+    box-sizing: border-box; /* [Checklist: Box Model] */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Kanit', sans-serif; /* [Checklist: Typography] */
+    line-height: 1.7;
+    background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 100%); /* โทนพาสเทล ม่วง-ชมพู */
+    color: #4a4a4a;
+    padding: 40px 20px;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* ==========================================
+   2. Element Selectors (25%)
+   ========================================== */
+h1 {
+    font-family: 'Mitr', sans-serif;
+    color: #8e24aa;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 4px rgba(142, 36, 170, 0.15);
+}
+
+h2 {
+    color: #d81b60;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    border-bottom: 2px dashed #f48fb1;
+    padding-bottom: 5px;
+}
+
+h3 {
+    color: #ab47bc;
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+
+p {
+    font-size: 1.05rem;
+    color: #555555;
+    margin-bottom: 15px;
+    text-indent: 25px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+    border: 3px solid #f8bbd0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+/* ==========================================
+   3. Class Selectors & Card Component (20%)
+   ========================================== */
+.card { /* [Checklist: Card Component] */
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 25px 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 20px rgba(186, 104, 200, 0.12);
+    border: 2px solid #f3e5f5;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* :hover Effect บน Card */
+.card:hover { /* [Checklist: :hover Effect] */
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(186, 104, 200, 0.2);
+}
+
+.profile-img-container {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.profile-img-container img {
+    border-radius: 50%;
+    border: 4px solid #f48fb1;
+}
+
+ul, ol {
+    margin-left: 20px;
+    color: #555555;
+}
+
+li {
+    margin-bottom: 15px;
+}
+
+.hobby-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.hobby-images img {
+    width: 48%;
+    max-width: 350px;
+    object-fit: cover;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+th {
+    background-color: #ce93d8;
+    color: #ffffff;
+    padding: 12px;
+    font-weight: 500;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #f3e5f5;
+}
+
+tr:nth-child(even) {
+    background-color: #fcf4f9;
+}
+
+caption {
+    font-weight: 600;
+    color: #8e24aa;
+    margin-bottom: 8px;
+}
+
+/* ==========================================
+   4. Pseudo-class (:hover) & ID Selectors (25%)
+   ========================================== */
+a {
+    color: #ba68c8;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+a:hover { /* [Checklist: :hover Effect] */
+    color: #d81b60;
+    text-decoration: underline;
+}
+
+.contact-links a {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: #f8bbd0;
+    color: #8e24aa;
+    border-radius: 25px;
+    margin: 5px 0;
+    font-weight: 500;
+}
+
+.contact-links a:hover { /* [Checklist: :hover Effect] */
+    background-color: #ce93d8;
+    color: #ffffff;
+    text-decoration: none;
+    transform: scale(1.03);
+}
+
+#top { /* [Checklist: ID Selector] */
+    display: block;
+}
