@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Beautiful Nails & Spa (เล็บสวย) ร้านทำเล็บเจล สปามือเท้า ต่อเล็บพรีเมียม หาดใหญ่">
+    <title>Beautiful Nails - เล็บสวย สตูดิโอทำเล็บและสปา</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charm:wght@700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --beauty-pink: #f7a8b8;
+            --beauty-pink-soft: #fff0f3;
+            --beauty-gold: #d4af37;
+            --beauty-gold-hover: #b89628;
+            --beauty-dark: #3a2e39;
+            --beauty-card: #ffffff;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: var(--beauty-pink-soft);
+            color: var(--beauty-dark);
+        }
+
+        .brand-logo-img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            object-fit: contain;
+            background-color: #ffffff;
+            padding: 2px;
+            border: 1px solid var(--beauty-gold);
+        }
+
+        .brand-logo-text {
+            font-family: 'Charm', cursive;
+            font-size: 1.8rem;
+            color: var(--beauty-dark);
+            font-weight: bold;
+        }
+
+        /* Glassmorphism Navbar */
+        .custom-navbar {
+            background: rgba(255, 240, 243, 0.95) !important;
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        /* Hero Carousel Styling */
+        .hero-slide {
+            height: 580px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(180deg, rgba(58, 46, 57, 0.4) 0%, rgba(58, 46, 57, 0.8) 100%);
+        }
+
+        /* Luxury Cards Effect */
+        .feature-card {
+            background-color: var(--beauty-card);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.35s ease;
+            box-shadow: 0 10px 30px rgba(247, 168, 184, 0.15);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--beauty-gold);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.3);
+        }
+
+        .icon-box {
+            width: 65px;
+            height: 65px;
+            background: var(--beauty-pink-soft);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--beauty-gold);
+        }
+
+        /* Buttons Styling */
+        .btn-gold {
+            background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%);
+            border: none;
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            transition: all 0.35s ease;
+        }
+
+        .btn-gold:hover {
+            background: linear-gradient(135deg, #e5be48 0%, #c49718 100%);
+            color: #fff;
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+        }
+
+        /* Form Customization */
+        .form-control, .form-select {
+            background-color: #fff;
+            border: 1px solid rgba(247, 168, 184, 0.5);
+            color: var(--beauty-dark);
+            border-radius: 10px;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--beauty-gold);
+            box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.25);
+        }
+
+        .text-pink {
+            color: var(--beauty-pink);
+        }
+
+        .text-gold {
+            color: var(--beauty-gold);
+        }
+
+        .badge-gold {
+            background-color: var(--beauty-gold);
+            color: #fff;
+        }
+
+        /* Color Overrides for Text */
+        .text-dark-custom {
+            color: var(--beauty-dark) !important;
+        }
+
+        .text-light-pink {
+            color: rgba(255, 240, 243, 0.85) !important;
+        }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- Header / Navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                    <!-- รูปโลโก้ร้าน -->
+                    <img src="logo.jpeg" alt="เล็บสวย BEAUTIFUL NAILS Logo" class="brand-logo-img">
+                    <span class="brand-logo-text me-2">เล็บสวย</span>
+                    <span class="badge badge-gold rounded-pill fw-normal fs-6">BEAUTIFUL NAILS</span>
+                </a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto ms-lg-4">
+                        <li class="nav-item"><a class="nav-link active fw-medium" href="#">หน้าแรก</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle fw-medium" href="#" id="serviceDrop" data-bs-toggle="dropdown">บริการของเรา</a>
+                            <ul class="dropdown-menu border-0 shadow-lg rounded-3">
+                                <li><a class="dropdown-item" href="#services"><i class="bi bi-heart-fill text-pink me-2"></i>ทาสีเจล / เพ้นท์เล็บอาร์ต</a></li>
+                                <li><a class="dropdown-item" href="#services"><i class="bi bi-sparkles text-gold me-2"></i>ต่อเล็บ PVC / อะคริลิก / โพลีเจล</a></li>
+                                <li><a class="dropdown-item" href="#services"><i class="bi bi-flower1 text-success me-2"></i>สปามือ-เท้า Organic Premium</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link fw-medium" href="#booking">จองคิวทำเล็บ</a></li>
+                        <li class="nav-item"><a class="nav-link fw-bold text-danger" href="#ailog"><i class="bi bi-robot me-1"></i>AI Log</a></li>
+                    </ul>
+                    <a href="#booking" class="btn btn-gold rounded-pill px-4 ms-lg-3"><i class="bi bi-calendar-heart me-2"></i>จองคิวทันที</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow-1" style="padding-top: 76px;">
+        <!-- Hero Carousel Section -->
+        <section>
+            <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+                </div>
+                <div class="carousel-inner">
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active">
+                        <div class="hero-slide position-relative" style="background-image: url('https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=1600');">
+                            <div class="position-absolute top-0 start-0 w-100 h-100 hero-overlay"></div>
+                            <div class="position-relative container h-100 d-flex align-items-center">
+                                <div class="col-lg-7 text-white">
+                                    <span class="badge bg-light text-dark mb-3 px-3 py-2 text-uppercase fs-6 rounded-pill">BEAUTIFUL NAILS SALON & SPA</span>
+                                    <h1 class="display-3 fw-bold mb-3">แต่งแต้มความงาม <br><span class="text-gold">บนเรียวนิ้วคุณ</span></h1>
+                                    <p class="lead mb-4 opacity-90">ร้านทำเล็บสุดพรีเมียม นำเทรนด์เกาหลี-ญี่ปุ่น พร้อมผลิตภัณฑ์นำเข้า ปลอดภัย ไม่ทำลายหน้าเล็บ</p>
+                                    <a href="#booking" class="btn btn-gold btn-lg rounded-pill px-5">จองคิวทำเล็บเลย</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="carousel-item">
+                        <div class="hero-slide position-relative" style="background-image: url('https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=1600');">
+                            <div class="position-absolute top-0 start-0 w-100 h-100 hero-overlay"></div>
+                            <div class="position-relative container h-100 d-flex align-items-center">
+                                <div class="col-lg-7 text-white">
+                                    <span class="badge bg-light text-dark mb-3 px-3 py-2 text-uppercase fs-6 rounded-pill">ORGANIC SPA</span>
+                                    <h2 class="display-3 fw-bold mb-3">ผ่อนคลายขั้นสุด <br><span class="text-gold">สปามือและเท้าออร์แกนิก</span></h2>
+                                    <p class="lead mb-4 opacity-90">ฟื้นฟูผิวที่เหนื่อยล้าด้วยสปาสูตรพรีเมียม สครับเนียนนุ่ม พร้อมมาส์กบำรุงล้ำลึก</p>
+                                    <a href="#services" class="btn btn-outline-light btn-lg rounded-pill px-5">ดูแพ็กเกจสปา</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="carousel-item">
+                        <div class="hero-slide position-relative" style="background-image: url('https://images.unsplash.com/photo-1632345031435-8727f6897d53?q=80&w=1600');">
+                            <div class="position-absolute top-0 start-0 w-100 h-100 hero-overlay"></div>
+                            <div class="position-relative container h-100 d-flex align-items-center">
+                                <div class="col-lg-7 text-white">
+                                    <span class="badge bg-light text-dark mb-3 px-3 py-2 text-uppercase fs-6 rounded-pill">HYGIENE FIRST</span>
+                                    <h2 class="display-3 fw-bold mb-3">สะอาด ปลอดภัย <br><span class="text-gold">ฆ่าเชื้ออุปกรณ์ 100%</span></h2>
+                                    <p class="lead mb-4 opacity-90">ใส่ใจสุขอนามัย อุปกรณ์ผ่านการอบฆ่าเชื้อทางการแพทย์และใช้ชุดตะไบแบบเคสต่อเคส</p>
+                                    <a href="#booking" class="btn btn-gold btn-lg rounded-pill px-5">นัดหมายล่วงหน้า</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="services" class="py-5">
+            <div class="container py-5">
+                <div class="text-center mb-5">
+                    <h6 class="text-gold text-uppercase fw-bold">OUR SERVICES</h6>
+                    <h2 class="display-5 fw-bold">บริการสุดพิเศษจากร้านเล็บสวย (Beautiful Nails)</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card feature-card h-100 rounded-4 p-4 text-center">
+                            <div class="card-body">
+                                <div class="icon-box fs-2 mb-4"><i class="bi bi-brush-fill"></i></div>
+                                <h3 class="h4 fw-bold mb-3">Gel Color & Art</h3>
+                                <p class="text-dark-custom mb-0">สีเจลเกรดพรีเมียม เงางาม ติดทนนานกว่า 4 สัปดาห์ มีสีให้เลือกมากกว่า 500 เฉดสี พร้อมช่างเพ้นท์งานละเอียด</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card feature-card h-100 rounded-4 p-4 text-center">
+                            <div class="card-body">
+                                <div class="icon-box fs-2 mb-4"><i class="bi bi-gem"></i></div>
+                                <h3 class="h4 fw-bold mb-3">Nail Extension</h3>
+                                <p class="text-dark-custom mb-0">บริการต่อเล็บทุกรูปแบบ ไม่ว่าจะเป็น ต่อ PVC เกรดบางเนียน, อะคริลิกทรงสวย หรือโพลีเจลเบาสบายมือ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card feature-card h-100 rounded-4 p-4 text-center">
+                            <div class="card-body">
+                                <div class="icon-box fs-2 mb-4"><i class="bi bi-droplet-half"></i></div>
+                                <h3 class="h4 fw-bold mb-3">Luxury Hand & Foot Spa</h3>
+                                <p class="text-dark-custom mb-0">สปาตัดแต่งหนัง ตัดเล็บคุด สครับผิวขาวกระจ่างใส นวดผ่อนคลายด้วยน้ำมันหอมระเหยและพารัฟฟินบำรุงผิว</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section id="booking" class="py-5" style="background-color: #fce4ec;">
+            <div class="container py-5">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-5">
+                        <span class="text-gold fw-bold text-uppercase">ONLINE BOOKING</span>
+                        <h2 class="display-5 fw-bold mb-4">จองคิวทำเล็บ Beautiful Nails</h2>
+                        <p class="text-dark-custom mb-4">สำรองคิวล่วงหน้าเพื่อการบริการที่ดูแลคุณได้อย่างพิถีพิถันและตรงเวลาที่สุด ไม่ต้องนั่งรอคิวนาน</p>
+                        
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="icon-box me-3 fs-4" style="width:50px; height:50px;"><i class="bi bi-telephone-fill"></i></div>
+                            <div>
+                                <div class="text-dark-custom small">โทรสอบถาม / จองคิว</div>
+                                <div class="fw-bold fs-5">074-123-456 / 081-234-5678</div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div class="icon-box me-3 fs-4" style="width:50px; height:50px; background: #e8f5e9; color:#2e7d32; border-color: transparent;"><i class="bi bi-line"></i></div>
+                            <div>
+                                <div class="text-dark-custom small">LINE Official</div>
+                                <div class="fw-bold fs-5">@beautifulnails</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm border border-danger-subtle">
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">ชื่อ - นามสกุล</label>
+                                        <input type="text" class="form-control form-control-lg" placeholder="คุณสมหญิง รักสวย" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">เบอร์โทรศัพท์</label>
+                                        <input type="tel" class="form-control form-control-lg" placeholder="081-234-5678" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">บริการที่ต้องการ</label>
+                                        <select class="form-select form-select-lg" required>
+                                            <option value="" selected disabled>เลือกบริการ...</option>
+                                            <option>ทาสีเจลมือ / เท้า</option>
+                                            <option>เพ้นท์ลาย / ติดอะไหล่ตกแต่ง</option>
+                                            <option>ต่อเล็บ (PVC / อะคริลิก / โพลีเจล)</option>
+                                            <option>สปามือ - เท้า พรีเมียม</option>
+                                            <option>ถอดสีเจล / ถอดเล็บต่อ</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">ช่างที่ต้องการ (ถ้ามี)</label>
+                                        <select class="form-select form-select-lg">
+                                            <option selected>ช่างคนไหนก็ได้</option>
+                                            <option>ช่างแอน (เชี่ยวชาญลายเพ้นท์)</option>
+                                            <option>ช่างเมย์ (เชี่ยวชาญงานต่อเล็บ)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">วันที่ต้องการนัดหมาย</label>
+                                        <input type="date" class="form-control form-control-lg" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">เวลาที่สะดวก</label>
+                                        <select class="form-select form-select-lg" required>
+                                            <option>10:00 - 12:00 น.</option>
+                                            <option>13:00 - 15:00 น.</option>
+                                            <option>15:00 - 17:00 น.</option>
+                                            <option>17:00 - 19:00 น.</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 mt-4">
+                                        <button type="submit" class="btn btn-gold btn-lg w-100 py-3 rounded-pill fw-bold fs-5">ยืนยันการจองคิวทำเล็บ</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Generation Log Section -->
+        <section id="ailog" class="container my-5 p-4 p-md-5 bg-white rounded-4 shadow-sm border border-warning-subtle">
+            <h3 class="fw-bold text-dark mb-4 d-flex align-items-center gap-2">
+                <i class="bi bi-robot text-danger"></i> AI Generation Log
+            </h3>
+            <div class="alert alert-light border border-secondary-subtle rounded-3 p-4">
+                <h5 class="fw-bold text-dark mb-2">Prompt ที่ใช้สั่งงาน AI:</h5>
+                <p class="text-secondary bg-body-tertiary p-3 rounded-3 border mb-4">
+                    "สร้างหน้าเว็บร้านทำเล็บด้วย Bootstrap 5 เปลี่ยนแบรนด์เป็น 'เล็บสวย BEAUTIFUL NAILS SALON & SPA' โดยแทรกรูปภาพโลโก้ตามไฟล์แนบ นำเสนอคอร์สบริการ สปามือเท้า ระบบจองคิวออนไลน์ และเพิ่มส่วน AI Generation Log"
+                </p>
+                
+                <h5 class="fw-bold text-dark mb-2">รายการปรับแต่งแก้ไขด้วยตนเอง (Manual Modifications):</h5>
+                <ul class="text-secondary mb-0">
+                    <li class="mb-2"><strong>ปรับแต่งโลโก้ร้าน:</strong> นำภาพโลโก้ลายเส้นดอกบัวและเรียวมือ <code>เล็บสวย BEAUTIFUL NAILS SALON & SPA</code> มาจัดวางบน Navbar และ Footer พร้อมปรับ Styling เป็น <code>object-fit: contain;</code> เพื่อให้แสดงผลคมชัดไม่โดนตัดขอบ</li>
+                    <li class="mb-2"><strong>ปรับโทนสีเว็บไซต์:</strong> ใช้ชุดสี Rose Gold คุมโทนสีชมพูอ่อน (<code>#fff0f3</code>) สลับกับสีทอง (<code>#d4af37</code>) เพื่อเพิ่มความเรียบหรูสไตล์สปา</li>
+                    <li class="mb-2"><strong>ปรับปรุงฟอร์มจองคิว:</strong> เพิ่มตัวเลือกช่างทำเล็บ, วัน-เวลาที่สะดวก และเปลี่ยนสไตล์ปุ่มเป็นทรงโค้งมน (Rounded-Pill)</li>
+                    <li><strong>เพิ่มส่วน AI Log:</strong> เพิ่มส่วนแสดงข้อมูลการใช้ AI และประวัติการแก้ไขด้วยตนเองเพื่อรองรับเกณฑ์การส่งงาน</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="pt-5 pb-4 style-footer" style="background-color: #3a2e39; color: #fff;">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <img src="logo.jpeg" alt="เล็บสวย BEAUTIFUL NAILS Logo" class="brand-logo-img">
+                        <span class="brand-logo-text text-gold fs-2">เล็บสวย</span>
+                    </div>
+                    <p class="text-light-pink mt-2">สตูดิโอทำเล็บและสปาพรีเมียม (BEAUTIFUL NAILS SALON & SPA) เติมเสน่ห์ให้เล็บสวยด้วยช่างฝีมือประณีต อุปกรณ์สะอาด และบริการที่เป็นกันเอง</p>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="fw-bold text-gold mb-3">เวลาเปิดให้บริการ</h5>
+                    <p class="text-light-pink mb-1"><i class="bi bi-clock me-2 text-gold"></i>เปิดบริการทุกวัน: 10:00 - 20:00 น.</p>
+                    <p class="text-light-pink"><i class="bi bi-info-circle me-2 text-gold"></i>รับคิวสุดท้ายเวลา 18:30 น.</p>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="fw-bold text-gold mb-3">ที่ตั้งร้าน</h5>
+                    <p class="text-light-pink mb-1"><i class="bi bi-geo-alt me-2 text-gold"></i>ถนนธรรมนูนวิถี อำเภอหาดใหญ่ จังหวัดสงขลา 90110</p>
+                    <p class="text-light-pink mb-1"><i class="bi bi-instagram me-2 text-gold"></i>@beautifulnails_official</p>
+                    <p class="text-light-pink"><i class="bi bi-facebook me-2 text-gold"></i>เล็บสวย BEAUTIFUL NAILS SALON & SPA</p>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color: rgba(212, 175, 55, 0.3);">
+            <div class="text-center text-light-pink small">
+                &copy; 2026 Beautiful Nails Salon & Spa. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

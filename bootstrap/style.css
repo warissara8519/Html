@@ -1,0 +1,55 @@
+/* Custom CSS Overrides - Nail Salon Theme */
+
+/* ภาพ Background Banner ร้านทำเล็บ (สามารถใช้รูปในโฟลเดอร์ เช่น nail.jpg ได้) */
+.hero-banner {
+  background-image: url('https://picsum.photos/id/1025/1200/500');
+  background-size: cover;
+  background-position: center;
+  min-height: 400px;
+}
+
+/* เลเยอร์ Overlay โทนสีเข้มอมชมพู */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(40, 20, 30, 0.55);
+}
+
+/* Custom Color: โทนสีชมพูร้านทำเล็บ */
+.btn-pink, .bg-pink {
+  background-color: #e91e63 !important;
+  border-color: #e91e63 !important;
+}
+
+.btn-pink:hover {
+  background-color: #c2185b !important;
+  border-color: #c2185b !important;
+}
+
+.btn-outline-pink {
+  color: #e91e63 !important;
+  border-color: #e91e63 !important;
+}
+
+.btn-outline-pink:hover {
+  background-color: #e91e63 !important;
+  color: #ffffff !important;
+}
+
+.text-pink {
+  color: #e91e63 !important;
+}
+
+/* Card Animation Effect */
+.card {
+  border-radius: 12px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(233, 30, 99, 0.15) !important;
+}
