@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GamerHub - Dashboard & Gaming Store</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bs-body-bg: #090d16;
+      --bs-body-color: #e2e8f0;
+      --font-title: 'Orbitron', sans-serif;
+      --font-main: 'Sarabun', sans-serif;
+      --neon-cyan: #00f0ff;
+      --neon-purple: #7000ff;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--bs-body-bg);
+      background-image: 
+        radial-gradient(at 20% 15%, rgba(0, 240, 255, 0.12) 0px, transparent 40%),
+        radial-gradient(at 80% 85%, rgba(112, 0, 255, 0.15) 0px, transparent 40%);
+      min-height: 100vh;
+    }
+
+    .font-orbitron {
+      font-family: var(--font-title);
+    }
+
+    .glass-card {
+      background: rgba(18, 24, 38, 0.75) !important;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(0, 240, 255, 0.15) !important;
+      border-radius: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px -5px rgba(0, 240, 255, 0.2);
+      border-color: rgba(0, 240, 255, 0.4) !important;
+    }
+
+    .neon-title {
+      background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-purple) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .btn-neon {
+      background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-purple) 100%);
+      border: none;
+      color: #000;
+      font-weight: 700;
+      font-family: var(--font-title);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .btn-neon:hover {
+      opacity: 0.9;
+      color: #fff;
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+    }
+
+    .form-control, .form-select {
+      background-color: rgba(9, 13, 22, 0.8) !important;
+      border-color: rgba(0, 240, 255, 0.2) !important;
+      color: #fff !important;
+    }
+
+    .form-control:focus, .form-select:focus {
+      border-color: var(--neon-cyan) !important;
+      box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+    }
+
+    .result-box {
+      background: rgba(9, 13, 22, 0.9);
+      border-left: 4px solid var(--neon-cyan);
+    }
+
+    .badge-rank {
+      font-family: var(--font-title);
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body class="py-4">
+
+  <div class="container">
+    <!-- Header -->
+    <header class="text-center mb-5">
+      <span class="badge bg-dark text-info border border-info rounded-pill px-3 py-2 mb-3">
+        <i class="fa-solid fa-gamepad me-1"></i> GAMERHUB DASHBOARD v2.0
+      </span>
+      <h1 class="display-4 fw-black font-orbitron neon-title">GAMING STORE & STATS</h1>
+      <p class="text-secondary">ระบบคำนวณเติมเงิน คำนวณไอเทม และตรวจสอบตารางสถิติ Rank การเล่น</p>
+    </header>
+
+    <!-- Content Grid -->
+    <div class="row g-4">
+      
+      <!-- 1. Top-up Calculator (ระบบคำนวณเติมเงิน) -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card glass-card h-100 p-3 text-light">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title font-orbitron fw-bold pb-2 border-bottom border-secondary mb-3">
+              <i class="fa-solid fa-coins text-warning me-2"></i>1. Coin Top-up
+            </h5>
+            <div class="mb-3">
+              <label class="form-label text-secondary small fw-semibold">เลือกแพ็กเกจ Coins</label>
+              <select class="form-select" id="coinPackage">
+                <option value="100">100 Coins (100 บาท)</option>
+                <option value="500">500 Coins + แถม 50 (500 บาท)</option>
+                <option value="1000">1,000 Coins + แถม 150 (1,000 บาท)</option>
+                <option value="2000">2,000 Coins + แถม 400 (2,000 บาท)</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label text-secondary small fw-semibold">โค้ดส่วนลด (เช่น GAMER10)</label>
+              <input type="text" class="form-control text-uppercase" id="topupPromo" placeholder="ระบุโค้ดส่วนลด">
+            </div>
+            <button class="btn btn-neon w-100 mt-auto" onclick="calculateTopup()">คำนวณยอดชำระ</button>
+            <div class="result-box p-3 rounded mt-3" id="topupResult">
+              <small class="text-secondary">กดปุ่มเพื่อคำนวณยอดเติมเงิน</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Item Calculator (ระบบคำนวณตระกร้าไอเทม) -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card glass-card h-100 p-3 text-light">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title font-orbitron fw-bold pb-2 border-bottom border-secondary mb-3">
+              <i class="fa-solid fa-cart-shopping text-info me-2"></i>2. Item Shop
+            </h5>
+            <div class="mb-3">
+              <label class="form-label text-secondary small fw-semibold">ราคาไอเทมในตระกร้า (Coins, ใส่เครื่องหมาย ,)</label>
+              <input type="text" class="form-control" id="itemPrices" value="150, 300, 80, 450">
+            </div>
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="checkbox" id="vipPass">
+              <label class="form-check-label text-info small" for="vipPass">
+                มีบัตร VIP Member (ลดเพิ่ม 10%)
+              </label>
+            </div>
+            <button class="btn btn-neon w-100 mt-auto" onclick="calculateItems()">รวมราคาไอเทมทั้งหมด</button>
+            <div class="result-box p-3 rounded mt-3" id="itemResult">
+              <small class="text-secondary">กดปุ่มเพื่อคำนวณราคาไอเทม</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Rank & Winrate Calculator (ระบบคำนวณ Winrate) -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card glass-card h-100 p-3 text-light">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title font-orbitron fw-bold pb-2 border-bottom border-secondary mb-3">
+              <i class="fa-solid fa-trophy text-danger me-2"></i>3. Winrate & Rank
+            </h5>
+            <div class="row g-2 mb-3">
+              <div class="col-6">
+                <label class="form-label text-secondary small fw-semibold">แมตช์ที่ชนะ</label>
+                <input type="number" class="form-control" id="winsCount" value="42" min="0">
+              </div>
+              <div class="col-6">
+                <label class="form-label text-secondary small fw-semibold">แมตช์ที่แพ้</label>
+                <input type="number" class="form-control" id="lossesCount" value="18" min="0">
+              </div>
+            </div>
+            <button class="btn btn-neon w-100 mt-auto" onclick="calculateRank()">คำนวณ Rank & Winrate</button>
+            <div class="result-box p-3 rounded mt-3" id="rankResult">
+              <small class="text-secondary">กดปุ่มเพื่อดูระดับ Rank</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Leaderboard Table (ตารางสถิติผู้เล่น) -->
+      <div class="col-12 col-lg-12">
+        <div class="card glass-card p-3 text-light">
+          <div class="card-body">
+            <h5 class="card-title font-orbitron fw-bold pb-2 border-bottom border-secondary mb-3">
+              <i class="fa-solid fa-ranking-star text-warning me-2"></i>4. Top Players Leaderboard
+            </h5>
+            <div class="table-responsive">
+              <table class="table table-dark table-hover bg-transparent align-middle mb-0">
+                <thead>
+                  <tr class="text-secondary font-orbitron small">
+                    <th>#</th>
+                    <th>PLAYER</th>
+                    <th>RANK</th>
+                    <th>SCORE</th>
+                    <th>STATUS</th>
+                  </tr>
+                </thead>
+                <tbody id="leaderboardBody">
+                  <!-- โหลดข้อมูลจาก JavaScript -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center p-3 card glass-card mt-5 text-light">
+      <small class="text-secondary font-orbitron">DEVELOPED FOR GAMERS & FRIENDS • POWERED BY BOOTSTRAP 5 & JAVASCRIPT</small>
+    </footer>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JavaScript Logic -->
+  <script src="script.js"></script>
+</body>
+</html>
